@@ -1,0 +1,22 @@
+{
+  "name": "mwangaben-vthelpers",
+  "version": "1.0.0",
+  "description": "Vue Test Helper Functions,",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwangaben/mwangaben-vthelpers.git"
+  },
+  "keywords": [
+    "mwangaben-vthelpers"
+  ],
+  "author": "Benedict Mwanga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mwangaben/mwangaben-vthelpers/issues"
+  },
+  "homepage": "https://github.com/mwangaben/mwangaben-vthelpers#readme"
+}
