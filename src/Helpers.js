@@ -13,7 +13,7 @@
      type(text, input) {
      	let node = this.find(input);
      	node.element.value = text;
-     	node.trigger('click');
+     	node.trigger('input');
      }
 
      click(selector) {
