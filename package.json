@@ -1,6 +1,6 @@
 {
   "name": "mwangaben-vthelpers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue Test Helper Functions,",
   "main": "index.js",
   "scripts": {
