@@ -53,6 +53,10 @@ describe('Questions', () => {
 		b.domHasNot('h1')
 	});
 
+	it('it ckecks domHasNot(selector) method', () => {
+		b.domHasNot('Mwangaben')
+	});
+
 
 
 
