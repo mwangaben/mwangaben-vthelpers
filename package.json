@@ -1,6 +1,6 @@
 {
   "name": "mwangaben-vthelpers",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Vue Test Helper Functions,inspired by Jeffery Way of laracasts.com",
   "main": "index.js",
   "scripts": {
