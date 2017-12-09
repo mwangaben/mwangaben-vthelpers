@@ -36,6 +36,10 @@
         this.expect(this.wrapper.contains(selector)).toBe(false);
      }
 
+     hidden(selector){
+        this.expect(this.find(selector).hasStyle('display', 'none')).toBe(true);
+     }
+
      find(selector){
      	return this.wrapper.find(selector);
      }

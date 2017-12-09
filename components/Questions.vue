@@ -11,6 +11,7 @@
 			  	<button class="cancel">Cancel</button>
 			  </form>
 		</div>
+		<ul v-show="false"><li>Hidden</li></ul>
 	</div>
 </template>
 

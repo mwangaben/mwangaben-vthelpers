@@ -49,12 +49,16 @@ describe('Questions', () => {
 		b.domHas('h2')
 	});
 
-	it('it ckecks domHasNot(selector) method', () => {
+	it('it checks domHasNot(selector) method', () => {
 		b.domHasNot('h1')
 	});
 
-	it('it ckecks domHasNot(selector) method', () => {
+	it('it checks domHasNot(selector) method', () => {
 		b.domHasNot('Mwangaben')
+	});
+	it('it ckecks if is hidden ', () => {
+	    b.hidden('ul')
+	    // b.see('Hidden', 'li')
 	});
 
 

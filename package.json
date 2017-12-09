@@ -1,7 +1,7 @@
 {
   "name": "mwangaben-vthelpers",
   "version": "1.0.3",
-  "description": "Vue Test Helper Functions,",
+  "description": "Vue Test Helper Functions,inspired by Jeffery Way of laracasts.com",
   "main": "index.js",
   "scripts": {
     "test": "mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
