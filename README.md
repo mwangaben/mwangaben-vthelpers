@@ -115,7 +115,7 @@ it('the wrapper or DOM has this' , () => {
 ```
 
 ```bash
-$  b.domHasNot(selector)
+$  b.domHasNot('selector')
 ```
 
 ```JS
@@ -123,6 +123,16 @@ it('the wrapper or DOM does not have this' , () => {
         b.domHasNot('h2')
     });
 ```
+
+```bash
+$ b.hidden('selector')
+```
+
+```JS
+it('it checks if the list is visible', () => {
+    b.hidden('ul');
+    })
+```    
 
 ### All in action
 
