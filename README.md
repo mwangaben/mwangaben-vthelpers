@@ -58,6 +58,16 @@ it('it shows the text in h2 tag ', () => {
     });
 ```
 
+```bash 
+$ b.doNotSee(text)
+```
+
+```JS
+it('it does not show the text node when visibility is hidden', () => {
+       b.doNotSee('Header');
+    })
+    
+
 ```bash
 $  b.type(text, selector)
 ```

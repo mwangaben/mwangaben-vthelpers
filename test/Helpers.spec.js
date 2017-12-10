@@ -61,6 +61,10 @@ describe('Questions', () => {
 	    // b.see('Hidden', 'li')
 	});
 
+	it('i do not see', () => {
+		b.doNotSee('Hello');	
+	});
+
 
 
 

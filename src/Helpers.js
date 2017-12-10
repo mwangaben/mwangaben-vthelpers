@@ -10,6 +10,10 @@
          this.expect(wrap.html()).toContain(text);
      }
 
+     doNotSee(text){
+        this.expect(this.wrapper.html()).not.toContain(text);
+     }
+
      type(text, input) {
      	let node = this.find(input);
      	node.element.value = text;
