@@ -66,7 +66,7 @@ $ b.doNotSee(text)
 it('it does not show the text node when visibility is hidden', () => {
        b.doNotSee('Header');
     })
-    
+ ```   
 
 ```bash
 $  b.type(text, selector)
