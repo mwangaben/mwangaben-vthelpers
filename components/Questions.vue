@@ -7,11 +7,14 @@
 		<div v-if="editing">
 			  <form>
 			  	<input type="text" name="name">
-			  	<button class="update">Update</button>
+			  	<button @click="update" class="update">Update</button>
 			  	<button class="cancel">Cancel</button>
 			  </form>
 		</div>
 		<ul v-show="false"><li>Hidden</li></ul>
+
+		<button @click="$emit('applied')" id="emit">Emit Event</button>
+		
 	</div>
 </template>
 
@@ -21,6 +24,13 @@
 			return {
 				editing: false
 			}
+		}, 
+		methods: {
+			update() {
+				 this.$emit('applied')
+				 this.editing = true
+			}
 		}
+		
 	}
 </script>

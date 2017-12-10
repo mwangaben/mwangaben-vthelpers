@@ -2,7 +2,7 @@
 
      constructor(wrapper, expect) {
          this.wrapper = wrapper;
-         this.expect = expect;
+         this.expect  = expect;
      }
 
       see(text, selector) {
@@ -15,8 +15,8 @@
      }
 
      type(text, input) {
-     	let node = this.find(input);
-     	node.element.value = text;
+     	let node               = this.find(input);
+     	    node.element.value = text;
      	node.trigger('input');
      }
 
@@ -43,9 +43,15 @@
      hidden(selector){
         this.expect(this.find(selector).hasStyle('display', 'none')).toBe(true);
      }
+     
+     
 
      find(selector){
      	return this.wrapper.find(selector);
+     }
+  
+     emitted(event) {
+        this.expect(this.wrapper.emitted()[event]).toBeTruthy();
      }
 
     
