@@ -47,6 +47,10 @@
      find(selector){
      	return this.wrapper.find(selector);
      }
+  
+     emitted(event) {
+        this.expect(this.wrapper.emitted()[event]).toBeTruthy();
+     }
 
     
  }
