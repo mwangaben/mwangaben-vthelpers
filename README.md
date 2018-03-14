@@ -142,7 +142,17 @@ $ b.hidden('selector')
 it('it checks if the list is visible', () => {
     b.hidden('ul');
     })
-```    
+```
+
+```bash
+$ b.emitted('event')
+```
+
+```JS
+it('broadcasts event', () => {
+    b.emitted('event');
+})
+```
 
 ### All in action
 
