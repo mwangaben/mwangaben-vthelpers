@@ -31,7 +31,12 @@ describe('Questions', () => {
 
 		b.see('Update');
 		b.see('Cancel');
-	});
+  });
+
+  it('test emitted(event)', () => {
+    b.click('.edit');
+    b.emitted('isEditing');
+  })
 
 	it('it test inputValueIs(text, selector)', () => {
 		b.type('Vue test helpers', 'input[name=title]');
