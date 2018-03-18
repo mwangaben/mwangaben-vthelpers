@@ -8,7 +8,7 @@ A package that aim at simplify writing your Vue test.
 
 ### How this package works:
 
-This package depends on vue-test-utils and expect packages. 
+This package depends on vue-test-utils and expect packages.
 
 
 
@@ -23,25 +23,25 @@ $ npm install mwangaben-vthelpers
 ## Basic Usage
 
 ```Js
-import {mount} from 'vue-test-utils';
-import Questions from '../components/Questions.vue';
+import { mount } from 'vue-test-utils';
 import expect from 'expect';
 import Helpers from  'mwangaben-vthelpers';
+import Questions from '../components/Questions.vue';
 
 
 describe('Questions', () => {
-       let wrapper, b;
+    let wrapper, b;
 
-     beforeEach(() => {
+    beforeEach(() => {
         wrapper = mount(Questions);
 
         b = new Helpers(wrapper, expect);
-     });
+    });
 ```
 
 ## Documentation
 
- Note the instantiation of the Helpers class and the arguments it takes, first is wrapper and second is expect package    
+ Note the instantiation of the Helpers class and the arguments it takes, first is wrapper and second is expect package
 
 
 ```bash
@@ -50,23 +50,23 @@ $  b.see(text, selector)
 
 ```JS
 it('it shows the text in h2 tag ', () => {
-        b.see('Where am i ?', 'h2');
+    b.see('Where am i ?', 'h2');
 
-        //Or anywhere you can find this text
-        b.see('Where am i?');
+    //Or anywhere you can find this text
+    b.see('Where am i?');
 
-    });
+});
 ```
 
-```bash 
+```bash
 $ b.doNotSee(text)
 ```
 
 ```JS
 it('it does not show the text node when visibility is hidden', () => {
-       b.doNotSee('Header');
-    })
- ```   
+    b.doNotSee('Header');
+})
+ ```
 
 ```bash
 $  b.type(text, selector)
@@ -74,8 +74,8 @@ $  b.type(text, selector)
 
 ```JS
 it('it does the typing thing ', () => {
-        b.type('Vue test helpers', 'input[name=title]');
-    });
+    b.type('Vue test helpers', 'input[name=title]');
+});
 ```
 
 ```bash
@@ -84,8 +84,8 @@ $  b.click(selector)
 
 ```JS
 it('it does the click thing ', () => {
-        b.click('#edit');
-    });
+    b.click('#edit');
+});
 ```
 
 ```bash
@@ -94,10 +94,10 @@ $  b.inputValueIs(text, selector)
 
 ```JS
 it('does the input value has this text', () => {
-        b.type('Vue test helpers', 'input[name=title]');
+    b.type('Vue test helpers', 'input[name=title]');
 
-        b.inputValueIs('Vue test helpers', 'input[name=title]');
-    });
+    b.inputValueIs('Vue test helpers', 'input[name=title]');
+});
 ```
 
 
@@ -107,10 +107,10 @@ $  b.inputValueIs(text, selector)
 
 ```JS
 it('does the input value is not this text', () => {
-        b.type('Vue test helpers', 'input[name=title]');
-        
-        b.inputValueIsNot('Tdd in Vue', 'input[name=title]');
-    });
+    b.type('Vue test helpers', 'input[name=title]');
+
+    b.inputValueIsNot('Tdd in Vue', 'input[name=title]');
+});
 ```
 
 
@@ -120,8 +120,8 @@ $  b.domHas(selector)
 
 ```JS
 it('the wrapper or DOM has this' , () => {
-        b.domHas('h2')
-    });
+    b.domHas('h2')
+});
 ```
 
 ```bash
@@ -130,8 +130,8 @@ $  b.domHasNot('selector')
 
 ```JS
 it('the wrapper or DOM does not have this' , () => {
-        b.domHasNot('h2')
-    });
+    b.domHasNot('h2')
+});
 ```
 
 ```bash
@@ -141,7 +141,7 @@ $ b.hidden('selector')
 ```JS
 it('it checks if the list is visible', () => {
     b.hidden('ul');
-    })
+})
 ```
 
 ```bash
@@ -166,9 +166,9 @@ import Helpers from 'mwangaben-vthelpers';
 
 describe('MockingRequest', () => {
     let wrapper, b;
-    
+
     beforeEach(() => {
-     moxios.install();
+        moxios.install();
 
         wrapper = mount(MockingRequest, {
             propsData: {
@@ -196,7 +196,7 @@ describe('MockingRequest', () => {
         b.domHasNot('textearea[name=body]');
 
         b.click('.edit');
-        
+
         b.inputValueIs('The title', 'input[name=title]');
         b.inputValueIs('The body', 'textarea[name=body]');
 
@@ -208,7 +208,7 @@ describe('MockingRequest', () => {
     });
 
     it('it updates the question when the update is clicked', (done) => {
-    
+
         b.click('.edit');
 
         b.see('Update');
@@ -220,7 +220,7 @@ describe('MockingRequest', () => {
         b.inputValueIs('Changed title', 'input[name=title]');
 
         moxios.stubRequest("/questions", {
-            status : 200, 
+            status : 200,
             response : {
                 title : 'The title',
                 body : 'The body'
@@ -245,7 +245,7 @@ describe('MockingRequest', () => {
         b.click('.cancel');
 
         b.see('The title');
-    }); 
+    });
 });
 ```
 
