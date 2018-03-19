@@ -1,33 +1,37 @@
-import {mount} from 'vue-test-utils';
-import Questions from '../components/Questions.vue';
+import { mount } from 'vue-test-utils';
 import expect from 'expect';
-import Helpers from  '../index.js';
+import Helpers from '../index.js';
+import Questions from '../components/Questions.vue';
 
+const inputTitle = 'input[name=title]';
+const defaultSentence = 'Vue test helpers';
 
 describe('Questions', () => {
-       let wrapper, b;
+  let wrapper, b;
 
-     beforeEach(() => {
-        wrapper = mount(Questions);
+  beforeEach(() => {
+    wrapper = mount(Questions);
 
-        b = new Helpers(wrapper, expect);
-     });
+    b = new Helpers(wrapper, expect);
+  });
 
-	it('it tests see(text, selector)  method with selector', () => {
-	    b.see('Where am i ?', 'h2');
-	});
+  it('tests see(text, selector) method with selector', () => {
+    b.see('Where am i ?', 'h2');
+  });
 
-	it('it tests the see(text) method without selector', () => {
-		b.see('Where am i ?');
-	});
+  it('tests the see(text) method without selector', () => {
+    b.see('Where am i ?');
+  });
 
-	it('it test the type(text, input) method', () => {
-		b.type('Vue test helpers', 'input[name=title]');
-		expect(wrapper.find('input[name=title]').element.value).toBe('Vue test helpers'); 
-	});
+  it('tests the type(text, input) method', () => {
+    b.type(defaultSentence, inputTitle);
 
-	it('it tests the click(selector) method', () => {
-		b.click('.edit');
+    const inputTitleValue = b.find(inputTitle).element.value;
+    expect(inputTitleValue).toBe(defaultSentence);
+  });
+
+  it('tests the click(selector) method', () => {
+    b.click('.edit');
 
 		b.see('Update');
 		b.see('Cancel');
@@ -38,40 +42,36 @@ describe('Questions', () => {
     b.emitted('isEditing');
   })
 
-	it('it test inputValueIs(text, selector)', () => {
-		b.type('Vue test helpers', 'input[name=title]');
-		
-		b.inputValueIs('Vue test helpers', 'input[name=title]');
-	});	
+  it('tests inputValueIs(text, selector)', () => {
+    b.type(defaultSentence, inputTitle);
 
-	it('it tests inputValueIsNot(text, selector)', () => {
-		b.type('Vue test helpers', 'input[name=title]');
-		
-		b.inputValueIsNot('V', 'input[name=title]');
-	});
+    b.inputValueIs(defaultSentence, inputTitle);
+  });
 
-	it('it checks domHas(selector)', () => {
-		b.domHas('h2')
-	});
+  it('tests inputValueIsNot(text, selector)', () => {
+    b.type(defaultSentence, inputTitle);
 
-	it('it checks domHasNot(selector) method', () => {
-		b.domHasNot('h1')
-	});
+    b.inputValueIsNot('V', inputTitle);
+  });
 
-	it('it checks domHasNot(selector) method', () => {
-		b.domHasNot('Mwangaben')
-	});
-	it('it ckecks if is hidden ', () => {
-	    b.hidden('ul')
-	    // b.see('Hidden', 'li')
-	});
+  it('checks domHas(selector)', () => {
+    b.domHas('h2')
+  });
 
-	it('i do not see', () => {
-		b.doNotSee('Hello');	
-	});
+  it('checks domHasNot(selector)', () => {
+    b.domHasNot('h1')
+  });
 
+  it('checks domHasNot(selector)', () => {
+    b.domHasNot('Mwangaben')
+  });
 
+  it('ckecks if is hidden ', () => {
+    b.hidden('ul')
+  });
 
+  it('checks doNotSee(text)', () => {
+    b.doNotSee('Hello')
+  });
 
-	
 });
