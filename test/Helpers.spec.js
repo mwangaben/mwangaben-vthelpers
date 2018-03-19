@@ -33,9 +33,14 @@ describe('Questions', () => {
   it('tests the click(selector) method', () => {
     b.click('.edit');
 
-    b.see('Update');
-    b.see('Cancel');
+		b.see('Update');
+		b.see('Cancel');
   });
+
+  it('test emitted(event)', () => {
+    b.click('.edit');
+    b.emitted('isEditing');
+  })
 
   it('tests inputValueIs(text, selector)', () => {
     b.type(defaultSentence, inputTitle);
