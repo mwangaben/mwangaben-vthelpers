@@ -58,12 +58,17 @@ describe('Questions', () => {
 	});
 	it('it ckecks if is hidden ', () => {
 	    b.hidden('ul')
-	    // b.see('Hidden', 'li')
+	    b.see('Hidden', 'li')
 	});
 
 	it('i do not see', () => {
 		b.doNotSee('Hello');	
-	});
+  });
+  
+  it('it emmitte the event', () => {
+    b.click('#emit');
+    b.emitted('applied')
+   });
 
 	
 
