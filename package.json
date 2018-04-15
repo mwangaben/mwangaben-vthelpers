@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/mwangaben/mwangaben-vthelpers#readme",
   "dependencies": {
-    "expect": "^21.2.1",
-    "vue-test-utils": "^1.0.0-beta.4"
+    "@vue/test-utils": "^1.0.0-beta.14",
+    "expect": "^21.2.1"
   },
   "devDependencies": {
     "jsdom": "^11.3.0",
