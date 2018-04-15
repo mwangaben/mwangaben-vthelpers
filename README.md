@@ -1,4 +1,4 @@
-# mwangaben-vthelpers
+# mwangaben-vthelpers [![Build Status](https://travis-ci.org/mwangaben/mwangaben-vthelpers.svg?branch=master)](https://travis-ci.org/mwangaben/mwangaben-vthelpers)
 
 
 A package that aim at simplify writing your Vue test.

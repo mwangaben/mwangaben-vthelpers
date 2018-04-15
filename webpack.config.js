@@ -2,8 +2,8 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.vue$/, 
-				use: 'vue-loader'
+				test: /\.vue$/,
+				use : 'vue-loader'
 			}
 		]
 	}

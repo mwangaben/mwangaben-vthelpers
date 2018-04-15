@@ -1,4 +1,4 @@
-import { mount } from 'vue-test-utils';
+import { mount } from '@vue/test-utils';
 import expect from 'expect';
 import Helpers from '../index.js';
 import Questions from '../components/Questions.vue';
@@ -71,5 +71,6 @@ describe('Questions', () => {
   it('checks doNotSee(text)', () => {
     b.doNotSee('Hello')
   });
+  // 
 
 });
