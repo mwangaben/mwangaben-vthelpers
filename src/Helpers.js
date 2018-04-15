@@ -41,7 +41,8 @@
      }
 
      hidden(selector){
-        this.expect(this.find(selector).hasStyle('display', 'none')).toBe(true);
+       const node = this.find(selector);
+       this.expect(node.isVisible()).toBe(false);
      }
      
      
