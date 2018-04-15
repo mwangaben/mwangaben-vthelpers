@@ -1,10 +1,10 @@
 module.exports = {
-	module: {
-		rules: [
-			{
-				test: /\.vue$/, 
-				use: 'vue-loader'
-			}
-		]
-	}
-};
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        use: 'vue-loader'
+      }
+    ]
+  }
+}
