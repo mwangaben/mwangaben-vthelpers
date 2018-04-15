@@ -8,248 +8,222 @@ A package that aim at simplify writing your Vue test.
 
 ### How this package works:
 
-This package depends on vue-test-utils and expect packages. 
-
-
+This package depends on vue-test-utils and expect packages.
 
 
 ## Installation
 
 
 ```bash
-$ npm install mwangaben-vthelpers
+$ npm install mwangaben-vthelpers --save-dev
 ```
 
 ## Basic Usage
 
-```Js
-import {mount} from 'vue-test-utils';
-import Questions from '../components/Questions.vue';
-import expect from 'expect';
-import Helpers from  'mwangaben-vthelpers';
-
+<!-- eslint-disable no-undef, no-unused-vars -->
+```js
+import expect from 'expect'
+import Helpers from 'mwangaben-vthelpers'
+import { mount } from 'vue-test-utils'
+import Questions from '../components/Questions.vue'
 
 describe('Questions', () => {
-       let wrapper, b;
+  let wrapper, b
 
-     beforeEach(() => {
-        wrapper = mount(Questions);
+  beforeEach(() => {
+    wrapper = mount(Questions)
 
-        b = new Helpers(wrapper, expect);
-     });
+    b = new Helpers(wrapper, expect)
+  })
+
+  // ...
+})
 ```
 
 ## Documentation
 
- Note the instantiation of the Helpers class and the arguments it takes, first is wrapper and second is expect package    
+ Note the instantiation of the Helpers class and the arguments it takes, first is wrapper and second is expect package
 
 
-```bash
-$  b.see(text, selector)
-```
+* `b.see(text, selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('it shows the text in h2 tag ', () => {
+    b.see('Where am i ?', 'h2')
 
-```JS
-it('it shows the text in h2 tag ', () => {
-        b.see('Where am i ?', 'h2');
+    // Or anywhere you can find this text
+    b.see('Where am i?')
+  })
+  ```
 
-        //Or anywhere you can find this text
-        b.see('Where am i?');
+* `b.doNotSee(text)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('it does not show the text node when visibility is hidden', () => {
+    b.doNotSee('Header')
+  })
+  ```
 
-    });
-```
+* `b.type(text, selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('it does the typing thing ', () => {
+    b.type('Vue test helpers', 'input[name=title]')
+  })
+  ```
 
-```bash 
-$ b.doNotSee(text)
-```
+* `b.click(selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('it does the click thing ', () => {
+    b.click('#edit')
+  })
+  ```
 
-```JS
-it('it does not show the text node when visibility is hidden', () => {
-       b.doNotSee('Header');
-    })
- ```   
+* `b.inputValueIs(text, selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('does the input value has this text', () => {
+    b.type('Vue test helpers', 'input[name=title]')
 
-```bash
-$  b.type(text, selector)
-```
+    b.inputValueIs('Vue test helpers', 'input[name=title]')
+  })
+  ```
 
-```JS
-it('it does the typing thing ', () => {
-        b.type('Vue test helpers', 'input[name=title]');
-    });
-```
+* `b.inputValueIs(text, selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('does the input value is not this text', () => {
+    b.type('Vue test helpers', 'input[name=title]')
 
-```bash
-$  b.click(selector)
-```
+    b.inputValueIsNot('Tdd in Vue', 'input[name=title]')
+  })
+  ```
 
-```JS
-it('it does the click thing ', () => {
-        b.click('#edit');
-    });
-```
+* `b.domHas(selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('the wrapper or DOM has this', () => {
+    b.domHas('h2')
+  })
+  ```
 
-```bash
-$  b.inputValueIs(text, selector)
-```
+* `b.domHasNot(selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('the wrapper or DOM does not have this', () => {
+    b.domHasNot('h2')
+  })
+  ```
 
-```JS
-it('does the input value has this text', () => {
-        b.type('Vue test helpers', 'input[name=title]');
+* `b.hidden(selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('it checks if the list is visible', () => {
+    b.hidden('ul')
+  })
+  ```
 
-        b.inputValueIs('Vue test helpers', 'input[name=title]');
-    });
-```
-
-
-```bash
-$  b.inputValueIs(text, selector)
-```
-
-```JS
-it('does the input value is not this text', () => {
-        b.type('Vue test helpers', 'input[name=title]');
-        
-        b.inputValueIsNot('Tdd in Vue', 'input[name=title]');
-    });
-```
-
-
-```bash
-$  b.domHas(selector)
-```
-
-```JS
-it('the wrapper or DOM has this' , () => {
-        b.domHas('h2')
-    });
-```
-
-```bash
-$  b.domHasNot('selector')
-```
-
-```JS
-it('the wrapper or DOM does not have this' , () => {
-        b.domHasNot('h2')
-    });
-```
-
-```bash
-$ b.hidden('selector')
-```
-
-```JS
-it('it checks if the list is visible', () => {
-    b.hidden('ul');
-    })
-```
-
-```bash
-$ b.emitted('event')
-```
-
-```JS
-it('broadcasts event', () => {
-    b.emitted('event');
-})
-```
+* `b.emitted(event)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('broadcasts event', () => {
+    b.emitted('event')
+  })
+  ```
 
 ### All in action
 
-```JS
-import {mount} from 'vue-test-utils';
-import MockingRequest from '../../resources/assets/js/components/MockingRequest.vue';
-import expect from 'expect';
-import moxios from 'moxios';
-import Helpers from 'mwangaben-vthelpers';
-
+<!-- eslint-disable no-undef -->
+```js
+import expect from 'expect'
+import moxios from 'moxios'
+import Helpers from 'mwangaben-vthelpers'
+import { mount } from 'vue-test-utils'
+import MockingRequest from '../../resources/assets/js/components/MockingRequest.vue'
 
 describe('MockingRequest', () => {
-    let wrapper, b;
-    
-    beforeEach(() => {
-     moxios.install();
+  let wrapper, b
 
-        wrapper = mount(MockingRequest, {
-            propsData: {
-                dataQuestion: {
-                    title: 'The title',
-                    body: 'The body',
-                }
-            }
-        });
+  beforeEach(() => {
+    moxios.install()
 
-        b = new Helpers(wrapper, expect);
-    });
-
-    afterEach(() => {
-        moxios.uninstall();
+    wrapper = mount(MockingRequest, {
+      propsData: {
+        dataQuestion: {
+          title: 'The title',
+          body: 'The body'
+        }
+      }
     })
 
-    it('it should have title and body', () => {
-        b.see('The title');
-        b.see('The body');
-    });
+    b = new Helpers(wrapper, expect)
+  })
 
-    it('it can be edited', () => {
-        b.domHasNot('input[name=title]');
-        b.domHasNot('textearea[name=body]');
+  afterEach(() => {
+    moxios.uninstall()
+  })
 
-        b.click('.edit');
-        
-        b.inputValueIs('The title', 'input[name=title]');
-        b.inputValueIs('The body', 'textarea[name=body]');
+  it('it should have title and body', () => {
+    b.see('The title')
+    b.see('The body')
+  })
 
-    });
+  it('it can be edited', () => {
+    b.domHasNot('input[name=title]')
+    b.domHasNot('textearea[name=body]')
 
-    it('hides the edit button during editing mode', () => {
-        wrapper.find('.edit').trigger('click');
-        expect(wrapper.contains('.edit')).toBe(false);
-    });
+    b.click('.edit')
 
-    it('it updates the question when the update is clicked', (done) => {
-    
-        b.click('.edit');
+    b.inputValueIs('The title', 'input[name=title]')
+    b.inputValueIs('The body', 'textarea[name=body]')
+  })
 
-        b.see('Update');
-        b.see('Cancel');
+  it('hides the edit button during editing mode', () => {
+    wrapper.find('.edit').trigger('click')
+    expect(wrapper.contains('.edit')).toBe(false)
+  })
 
-        b.type('Changed title', 'input[name=title]');
-        b.type('Changed body', 'textarea[name=body]');
+  it('it updates the question when the update is clicked', (done) => {
+    b.click('.edit')
 
-        b.inputValueIs('Changed title', 'input[name=title]');
+    b.see('Update')
+    b.see('Cancel')
 
-        moxios.stubRequest("/questions", {
-            status : 200, 
-            response : {
-                title : 'The title',
-                body : 'The body'
-            }
-        });
+    b.type('Changed title', 'input[name=title]')
+    b.type('Changed body', 'textarea[name=body]')
 
-        b.click('#update');
+    b.inputValueIs('Changed title', 'input[name=title]')
 
-        b.see('Changed title');
-        b.see('Changed body');
-        moxios.wait(() => {
-            b.see('Your question has been updated');
-            done();
-        })
-    });
+    moxios.stubRequest('/questions', {
+      status: 200,
+      response: {
+        title: 'The title',
+        body: 'The body'
+      }
+    })
 
-    it('it can cancel the editing', () => {
-        b.click('.edit');
+    b.click('#update')
 
-        b.type('Changed title', 'input[name=title]');
+    b.see('Changed title')
+    b.see('Changed body')
+    moxios.wait(() => {
+      b.see('Your question has been updated')
+      done()
+    })
+  })
 
-        b.click('.cancel');
+  it('it can cancel the editing', () => {
+    b.click('.edit')
 
-        b.see('The title');
-    }); 
-});
+    b.type('Changed title', 'input[name=title]')
+
+    b.click('.cancel')
+
+    b.see('The title')
+  })
+})
 ```
-
-
 
 
 ## License
