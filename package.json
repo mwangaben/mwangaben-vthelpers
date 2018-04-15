@@ -33,6 +33,7 @@
     "expect": "^21.2.1"
   },
   "devDependencies": {
+    "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.11.0",
