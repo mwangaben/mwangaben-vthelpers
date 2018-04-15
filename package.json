@@ -25,6 +25,7 @@
     "expect": "^21.2.1"
   },
   "devDependencies": {
+    "css-loader": "^0.28.11",
     "jsdom": "^11.3.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^4.0.1",
