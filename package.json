@@ -6,7 +6,14 @@
   "scripts": {
     "test": "mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
     "watch": "mocha-webpack --webpack-config webpack.config.js --watch --require test/setup.js test/**/*.spec.js",
-    "lint": "eslint --ext .js,.vue,.md --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue,.md --ignore-path .gitignore .",
+    "lint-staged": "lint-staged"
+  },
+  "pre-commit": "lint-staged, test",
+  "lint-staged": {
+    "*.js": "eslint --ext .js",
+    "*.vue": "eslint --ext .vue",
+    "*.md": "eslint --ext .md"
   },
   "repository": {
     "type": "git",
@@ -37,8 +44,10 @@
     "eslint-plugin-vue": "^4.4.0",
     "jsdom": "^11.3.0",
     "jsdom-global": "^3.0.2",
+    "lint-staged": "^7.0.4",
     "mocha": "^4.0.1",
     "mocha-webpack": "^1.0.1",
+    "pre-commit": "^1.2.2",
     "vue": "^2.5.3",
     "vue-loader": "^13.5.0",
     "vue-template-compiler": "^2.5.3",
