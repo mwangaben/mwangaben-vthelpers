@@ -134,6 +134,15 @@ describe('Questions', () => {
   })
   ```
 
+### STORE
+* `b.getter(getterName)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('returns the value of the getter passed in argument', () => {
+    b.getter('myModule/myGetter')
+  })
+  ```
+
 ## All in action
 
 <!-- eslint-disable no-undef -->
