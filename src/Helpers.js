@@ -4,6 +4,7 @@ class Helpers {
     this.expect = expect
   }
 
+  // dom
   see(text, selector) {
     const wrap = selector ? this.wrapper.find(selector) : this.wrapper
     this.expect(wrap.html()).toContain(text)
@@ -13,22 +14,9 @@ class Helpers {
     this.expect(this.wrapper.html()).not.toContain(text)
   }
 
-  type(text, input) {
-    let node = this.find(input)
-    node.element.value = text
-    node.trigger('input')
-  }
-
-  click(selector) {
-    this.find(selector).trigger('click')
-  }
-
-  inputValueIs(text, selector) {
-    this.expect(this.find(selector).element.value).toBe(text)
-  }
-
-  inputValueIsNot(text, selector) {
-    this.expect(this.find(selector).element.value).not.toBe(text)
+  hidden(selector) {
+    const node = this.find(selector)
+    this.expect(node.isVisible()).toBe(false)
   }
 
   domHas(selector) {
@@ -39,13 +27,28 @@ class Helpers {
     this.expect(this.wrapper.contains(selector)).toBe(false)
   }
 
-  hidden(selector) {
-    const node = this.find(selector)
-    this.expect(node.isVisible()).toBe(false)
-  }
-
   find(selector) {
     return this.wrapper.find(selector)
+  }
+
+  // input
+  type(text, input) {
+    let node = this.find(input)
+    node.element.value = text
+    node.trigger('input')
+  }
+
+  inputValueIs(text, selector) {
+    this.expect(this.find(selector).element.value).toBe(text)
+  }
+
+  inputValueIsNot(text, selector) {
+    this.expect(this.find(selector).element.value).not.toBe(text)
+  }
+
+  // event
+  click(selector) {
+    this.find(selector).trigger('click')
   }
 
   emitted(event) {
