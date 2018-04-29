@@ -1,5 +1,4 @@
-/node_modules
+node_modules
 .eslintrc.json
-.travis.yml
 .vscode
 comments.z
