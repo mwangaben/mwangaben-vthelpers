@@ -8,7 +8,7 @@ A package that aim at simplify writing your Vue test.
 
 ### How this package works:
 
-This package depends on vue-test-utils and expect packages.
+This package depends on vue-test-utils and expect (if you don't use jest) packages.
 
 
 ## Installation
@@ -22,7 +22,7 @@ $ npm install mwangaben-vthelpers --save-dev
 
 <!-- eslint-disable no-undef, no-unused-vars -->
 ```js
-import expect from 'expect'
+import expect from 'expect' // no needed if you already use jest
 import Helpers from 'mwangaben-vthelpers'
 import { mount } from 'vue-test-utils'
 import Questions from '../components/Questions.vue'
