@@ -22,6 +22,9 @@
   "keywords": [
     "mwangaben-vthelpers"
   ],
+  "files": [
+    "src/*.js"
+  ],
   "author": "Benedict Mwanga",
   "license": "ISC",
   "bugs": {
