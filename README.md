@@ -24,7 +24,7 @@ $ npm install mwangaben-vthelpers --save-dev
 ```js
 import expect from 'expect' // no needed if you already use jest
 import Helpers from 'mwangaben-vthelpers'
-import { mount } from 'vue-test-utils'
+import { mount } from '@vue/test-utils'
 import Questions from '../components/Questions.vue'
 
 describe('Questions', () => {
@@ -191,7 +191,7 @@ describe('MockingRequest', () => {
   })
 
   it('hides the edit button during editing mode', () => {
-    wrapper.find('.edit').trigger('click')
+    b.click('.edit')
     expect(wrapper.contains('.edit')).toBe(false)
   })
 
