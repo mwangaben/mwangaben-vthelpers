@@ -32,10 +32,10 @@ class Helpers {
   }
 
   // input
-  type(text, input) {
-    let node = this.find(input)
+  type(text, input, event = 'input') {
+    const node = this.find(input)
     node.element.value = text
-    node.trigger('input')
+    node.trigger(event)
   }
 
   inputValueIs(text, selector) {

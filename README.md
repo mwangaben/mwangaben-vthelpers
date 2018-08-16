@@ -89,11 +89,12 @@ describe('Questions', () => {
   ```
 
 ### INPUT
-* `b.type(text, selector)`
+* `b.type(text, selector, event)`
   <!-- eslint-disable no-undef -->
   ```js
   it('does the typing thing ', () => {
-    b.type('Vue test helpers', 'input[name=title]')
+    b.type('Vue test helpers', 'input[name=title]') // event = 'input' by default
+    b.type('Vue test helpers', 'select[name=selectList]', 'change')
   })
   ```
 
