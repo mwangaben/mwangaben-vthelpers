@@ -8,7 +8,7 @@ A package that aim at simplify writing your Vue test.
 
 ### How this package works:
 
-This package depends on vue-test-utils and expect packages.
+This package depends on vue-test-utils and expect (if you don't use jest) packages.
 
 
 ## Installation
@@ -22,7 +22,7 @@ $ npm install mwangaben-vthelpers --save-dev
 
 <!-- eslint-disable no-undef, no-unused-vars -->
 ```js
-import expect from 'expect'
+import expect from 'expect' // no needed if you already use jest
 import Helpers from 'mwangaben-vthelpers'
 import { mount } from 'vue-test-utils'
 import Questions from '../components/Questions.vue'
@@ -44,11 +44,11 @@ describe('Questions', () => {
 
  Note the instantiation of the Helpers class and the arguments it takes, first is wrapper and second is expect package
 
-
+### DOM
 * `b.see(text, selector)`
   <!-- eslint-disable no-undef -->
   ```js
-  it('it shows the text in h2 tag ', () => {
+  it('shows the text in h2 tag ', () => {
     b.see('Where am i ?', 'h2')
 
     // Or anywhere you can find this text
@@ -59,24 +59,41 @@ describe('Questions', () => {
 * `b.doNotSee(text)`
   <!-- eslint-disable no-undef -->
   ```js
-  it('it does not show the text node when visibility is hidden', () => {
+  it('does not show the text node when visibility is hidden', () => {
     b.doNotSee('Header')
   })
   ```
 
-* `b.type(text, selector)`
+* `b.hidden(selector)`
   <!-- eslint-disable no-undef -->
   ```js
-  it('it does the typing thing ', () => {
-    b.type('Vue test helpers', 'input[name=title]')
+  it('checks if the list is visible', () => {
+    b.hidden('ul')
   })
   ```
 
-* `b.click(selector)`
+* `b.domHas(selector)`
   <!-- eslint-disable no-undef -->
   ```js
-  it('it does the click thing ', () => {
-    b.click('#edit')
+  it('checks if the wrapper or DOM has this', () => {
+    b.domHas('h2')
+  })
+  ```
+
+* `b.domHasNot(selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('checks if the wrapper or DOM does not have this', () => {
+    b.domHasNot('h2')
+  })
+  ```
+
+### INPUT
+* `b.type(text, selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('does the typing thing ', () => {
+    b.type('Vue test helpers', 'input[name=title]')
   })
   ```
 
@@ -100,27 +117,12 @@ describe('Questions', () => {
   })
   ```
 
-* `b.domHas(selector)`
+### EVENT
+* `b.click(selector)`
   <!-- eslint-disable no-undef -->
   ```js
-  it('the wrapper or DOM has this', () => {
-    b.domHas('h2')
-  })
-  ```
-
-* `b.domHasNot(selector)`
-  <!-- eslint-disable no-undef -->
-  ```js
-  it('the wrapper or DOM does not have this', () => {
-    b.domHasNot('h2')
-  })
-  ```
-
-* `b.hidden(selector)`
-  <!-- eslint-disable no-undef -->
-  ```js
-  it('it checks if the list is visible', () => {
-    b.hidden('ul')
+  it('does the click thing ', () => {
+    b.click('#edit')
   })
   ```
 
@@ -132,7 +134,16 @@ describe('Questions', () => {
   })
   ```
 
-### All in action
+### STORE
+* `b.getter(getterName)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('returns the value of the getter passed in argument', () => {
+    b.getter('myModule/myGetter')
+  })
+  ```
+
+## All in action
 
 <!-- eslint-disable no-undef -->
 ```js

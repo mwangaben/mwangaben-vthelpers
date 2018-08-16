@@ -1,6 +1,6 @@
 {
   "name": "mwangaben-vthelpers",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Vue Test Helper Functions, inspired by Jeffery Way of laracasts.com",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,9 @@
   },
   "keywords": [
     "mwangaben-vthelpers"
+  ],
+  "files": [
+    "src/*.js"
   ],
   "author": "Benedict Mwanga",
   "license": "ISC",
