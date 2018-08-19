@@ -1,3 +1,5 @@
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 module.exports = {
   module: {
     rules: [
@@ -6,5 +8,8 @@ module.exports = {
         use: 'vue-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 }
