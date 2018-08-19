@@ -55,8 +55,6 @@ class Helpers {
 		this.expect(this.wrapper.emitted()[event]).toBeTruthy()
 	}
 
-
-
 	emittedContains(event, ...data) {
 		this.emitted(event)
 		let elements = this.wrapper.emitted()[event][0]
