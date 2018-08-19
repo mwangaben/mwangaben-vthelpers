@@ -1,26 +1,27 @@
 {
   "name": "mwangaben-vthelpers",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Vue Test Helper Functions, inspired by Jeffery Way of laracasts.com",
   "main": "index.js",
   "scripts": {
     "test": "mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
-    "watch": "mocha-webpack --webpack-config webpack.config.js --watch --require test/setup.js test/**/*.spec.js",
+    "watch": "mocha-webpack --watch --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
     "lint": "eslint --ext .js,.vue,.md --ignore-path .gitignore .",
     "lint-staged": "lint-staged"
   },
   "pre-commit": "lint-staged, test",
   "lint-staged": {
     "*.js": "eslint --ext .js",
-    "*.vue": "eslint --ext .vue",
-    "*.md": "eslint --ext .md"
+    "*.vue": "eslint --ext .vue"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mwangaben/mwangaben-vthelpers.git"
   },
   "keywords": [
-    "mwangaben-vthelpers"
+    "mwangaben-vthelpers,",
+    "vue-test-helpers",
+    "vue-test-utils-helpers"
   ],
   "files": [
     "src/*.js"
@@ -53,8 +54,9 @@
     "mocha-webpack": "^1.0.1",
     "pre-commit": "^1.2.2",
     "vue": "^2.5.3",
-    "vue-loader": "^13.5.0",
+    "vue-loader": "^15.3.0",
     "vue-template-compiler": "^2.5.3",
+    "watchpack": "^1.6.0",
     "webpack": "^3.8.1"
   }
 }
