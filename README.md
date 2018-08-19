@@ -1,6 +1,5 @@
 # mwangaben-vthelpers [![Build Status](https://travis-ci.org/mwangaben/mwangaben-vthelpers.svg?branch=master)](https://travis-ci.org/mwangaben/mwangaben-vthelpers)
 
-
 A package that aim at simplify writing your Vue test.
 
 
@@ -28,7 +27,7 @@ import { mount } from '@vue/test-utils'
 import Questions from '../components/Questions.vue'
 
 describe('Questions', () => {
-  let wrapper, b
+  let wr/apper, b
 
   beforeEach(() => {
     wrapper = mount(Questions)

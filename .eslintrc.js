@@ -12,7 +12,7 @@ module.exports = {
     },
     "rules": {
         "indent": "off",
-         
+
         "linebreak-style": [
             "error",
             "unix"
@@ -24,6 +24,10 @@ module.exports = {
         "semi": [
             "error",
             "never"
-        ]
-    }
+        ],
+        // "no-undef": true
+    },
+    "plugins": [
+        "markdown"
+    ]
 };
