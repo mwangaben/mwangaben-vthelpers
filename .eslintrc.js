@@ -1,27 +1,33 @@
 module.exports = {
-  root: true,
-  parserOptions: {
-    sourceType: 'module'
-  },
-  env: {
-    browser: true,
-    node: true,
-    mocha: true
-  },
-  extends: [
-    'standard',
-    'plugin:vue/recommended'
-  ],
-  plugins: [
-    'vue',
-    'mocha',
-    'markdown'
-  ],
-  rules: {
-    'space-before-function-paren': 'off',
-    'vue/max-attributes-per-line': [2, {
-      'singleline': 2
-    }]
-  },
-  globals: {}
-}
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        'mocha': true
+    },
+    "extends": ["eslint:recommended", "plugin:vue/essential"],
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": "off",
+
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
+        // "no-undef": true
+    },
+    "plugins": [
+        "markdown"
+    ]
+};
