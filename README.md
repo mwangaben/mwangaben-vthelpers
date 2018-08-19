@@ -1,6 +1,5 @@
 # mwangaben-vthelpers [![Build Status](https://travis-ci.org/mwangaben/mwangaben-vthelpers.svg?branch=master)](https://travis-ci.org/mwangaben/mwangaben-vthelpers)
 
-
 A package that aim at simplify writing your Vue test.
 
 
@@ -28,7 +27,7 @@ import { mount } from '@vue/test-utils'
 import Questions from '../components/Questions.vue'
 
 describe('Questions', () => {
-  let wrapper, b
+  let wr/apper, b
 
   beforeEach(() => {
     wrapper = mount(Questions)
@@ -132,6 +131,31 @@ describe('Questions', () => {
   ```js
   it('broadcasts event', () => {
     b.emitted('event')
+  })
+  ```
+* `b.emittedContains(event,data)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('checks data emitted by this.$emit(event, 40)', () => {
+    b.emittedContains('event', 40)
+  })
+  ```
+
+  ```js
+  it('checks data emitted by this.$emit(event, 40, 20, 10, 23)', () => {
+    b.emittedContains('event', 40, 10)
+  })
+  ```
+
+  ```js
+  it('checks data emitted by this.$emit(event, [40, 12, 24, 45])', () => {
+    b.emittedContains('event', [12, 45])
+  })
+  ```
+
+  ```js
+  it('checks data emitted by this.$emit(event, {company: "Apple.incl", product: "iPhone X"})', () => {
+    b.emittedContains('event', {product: 'iPhone X'} )
   })
   ```
 
