@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
-    "watch": "mocha-webpack --webpack-config webpack.config.js --watch --require test/setup.js test/**/*.spec.js",
+    "watch": "mocha-webpack --watch --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
     "lint": "eslint --ext .js,.vue,.md --ignore-path .gitignore .",
     "lint-staged": "lint-staged"
   },
@@ -20,7 +20,9 @@
     "url": "git+https://github.com/mwangaben/mwangaben-vthelpers.git"
   },
   "keywords": [
-    "mwangaben-vthelpers"
+    "mwangaben-vthelpers,",
+    "vue-test-helpers",
+    "vue-test-utils-helpers"
   ],
   "files": [
     "src/*.js"
@@ -55,6 +57,7 @@
     "vue": "^2.5.3",
     "vue-loader": "^15.3.0",
     "vue-template-compiler": "^2.5.3",
+    "watchpack": "^1.6.0",
     "webpack": "^3.8.1"
   }
 }

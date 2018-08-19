@@ -134,6 +134,31 @@ describe('Questions', () => {
     b.emitted('event')
   })
   ```
+* `b.emittedContains(event,data)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('checks data emitted by this.$emit(event, 40)', () => {
+    b.emittedContains('event', 40)
+  })
+  ```
+
+  ```js
+  it('checks data emitted by this.$emit(event, 40, 20, 10, 23)', () => {
+    b.emittedContains('event', 40, 10)
+  })
+  ```
+
+  ```js
+  it('checks data emitted by this.$emit(event, [40, 12, 24, 45])', () => {
+    b.emittedContains('event', [12, 45])
+  })
+  ```
+
+  ```js
+  it('checks data emitted by this.$emit(event, {company: "Apple.incl", product: "iPhone X"})', () => {
+    b.emittedContains('event', {product: 'iPhone X'} )
+  })
+  ```
 
 ### STORE
 * `b.getter(getterName)`
