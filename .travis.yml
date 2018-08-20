@@ -5,4 +5,5 @@ cache:
   - node_modules
 script:
   - npm test
+  - npm run lint
 
