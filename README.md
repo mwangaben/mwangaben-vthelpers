@@ -87,6 +87,39 @@ describe('Questions', () => {
   })
   ```
 
+* `b.hasAClass(class)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('confirm the existance of a class container in a DOM', () => {
+      b.hasAClass('container')
+  })
+  ```
+
+* `b.hasAClass(class, selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('confirm the existance of a class container in a first div to be found in a DOM', () => {
+      b.hasAClass('container', 'div')
+  })
+  ```
+
+* `b.doesNotHaveAClass(class)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('confirms that a class container does not exist in a DOM', () => {
+      b.doesNotHaveAClass('containers', 'div')
+  })
+  ```
+
+ * `b.doesNotHaveAClass(class, selector)`
+    <!-- eslint-disable no-undef -->
+    ```js
+    it('confirms that a class container does not exist on first div to be found in a DOM', () => {
+        b.doesNotHaveAClass('containers', 'div')
+    })
+  ```
+
+
 ### INPUT
 * `b.type(text, selector, event)`
   <!-- eslint-disable no-undef -->

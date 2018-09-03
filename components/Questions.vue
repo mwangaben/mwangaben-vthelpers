@@ -1,12 +1,16 @@
 <template>
-<div>
+<div class="container">
     <h2>Where am i ?</h2>
-    <input type="text" name="title">
+    <div class="form-group">
+      <input type="text" name="title">  
+    </div>
 
     <button class="edit" @click="edit">Edit</button>
     <div v-if="editing">
         <form>
-            <input type="text" name="name">
+            <div  class="form-group">
+               <input type="text" name="name">
+            </div>
             <button class="update" @click="update">Update</button>
             <button class="cancel">Cancel</button>
         </form>
