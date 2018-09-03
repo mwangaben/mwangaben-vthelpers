@@ -111,12 +111,12 @@ describe('Questions', () => {
   })
   ```
 
- * `b.doesNotHaveAClass(class, selector)`
-    <!-- eslint-disable no-undef -->
-    ```js
-    it('confirms that a class container does not exist on first div to be found in a DOM', () => {
-        b.doesNotHaveAClass('containers', 'div')
-    })
+* `b.doesNotHaveAClass(class, selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('confirms that a class container does not exist on first div to be found in a DOM', () => {
+      b.doesNotHaveAClass('containers', 'div')
+  })
   ```
 
 
