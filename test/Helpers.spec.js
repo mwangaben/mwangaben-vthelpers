@@ -52,9 +52,6 @@ describe('Questions', () => {
 		b.emittedContains('status', 200, 500)
 	})
 
-
-
-
 	it('tests emittedContains(event, array)', () => {
 		wrapper.vm.firePrices()
 		b.emittedContains('prices', [10, 20])
@@ -98,5 +95,13 @@ describe('Questions', () => {
 
 	it('checks doNotSee(text)', () => {
 		b.doNotSee('Hello')
+	})
+
+	it('confirm the existance of a class container in a DOM', () => {
+			b.hasAClass('container')
+	})
+
+	it('confirms that a class container does not exist on first div to be found on a DOM', () => {
+			b.doesNotHaveAClass('containers', 'div')
 	})
 })
