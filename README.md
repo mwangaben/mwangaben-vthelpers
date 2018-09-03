@@ -27,7 +27,7 @@ import { mount } from '@vue/test-utils'
 import Questions from '../components/Questions.vue'
 
 describe('Questions', () => {
-  let wrapper, b
+  let wr/apper, b
 
   beforeEach(() => {
     wrapper = mount(Questions)
