@@ -27,7 +27,7 @@ import { mount } from '@vue/test-utils'
 import Questions from '../components/Questions.vue'
 
 describe('Questions', () => {
-  let wr/apper, b
+  let wrapper, b
 
   beforeEach(() => {
     wrapper = mount(Questions)
@@ -111,12 +111,12 @@ describe('Questions', () => {
   })
   ```
 
- * `b.doesNotHaveAClass(class, selector)`
-    <!-- eslint-disable no-undef -->
-    ```js
-    it('confirms that a class container does not exist on first div to be found in a DOM', () => {
-        b.doesNotHaveAClass('containers', 'div')
-    })
+* `b.doesNotHaveAClass(class, selector)`
+  <!-- eslint-disable no-undef -->
+  ```js
+  it('confirms that a class container does not exist on first div to be found in a DOM', () => {
+      b.doesNotHaveAClass('containers', 'div')
+  })
   ```
 
 
