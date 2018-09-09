@@ -1,22 +1,22 @@
 {
-  "name"       : "mwangaben-vthelpers",
-  "version"    : "1.2.4",
+  "name": "mwangaben-vthelpers",
+  "version": "1.2.5",
   "description": "Vue Test Helper Functions, inspired by Jeffery Way of laracasts.com",
-  "main"       : "index.js",
-  "scripts"    : {
-    "test"       : "mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
-    "watch"      : "npm run test -- -w",
-    "lint"       : "eslint --ext .js,.vue,.md --ignore-path .gitignore .",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha-webpack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
+    "watch": "npm run test -- -w",
+    "lint": "eslint --ext .js,.vue,.md --ignore-path .gitignore .",
     "lint-staged": "lint-staged"
   },
-  "pre-commit" : "lint-staged, test",
+  "pre-commit": "lint-staged, test",
   "lint-staged": {
-    "*.js" : "eslint --ext .js",
+    "*.js": "eslint --ext .js",
     "*.vue": "eslint --ext .vue"
   },
   "repository": {
     "type": "git",
-    "url" : "git+https://github.com/mwangaben/mwangaben-vthelpers.git"
+    "url": "git+https://github.com/mwangaben/mwangaben-vthelpers.git"
   },
   "keywords": [
     "mwangaben-vthelpers,",
@@ -26,39 +26,39 @@
   "files": [
     "src/*.js"
   ],
-  "author" : "Benedict Mwanga",
+  "author": "Benedict Mwanga",
   "license": "ISC",
-  "bugs"   : {
+  "bugs": {
     "url": "https://github.com/mwangaben/mwangaben-vthelpers/issues"
   },
-  "homepage"    : "https://github.com/mwangaben/mwangaben-vthelpers#readme",
+  "homepage": "https://github.com/mwangaben/mwangaben-vthelpers#readme",
   "dependencies": {
     "@vue/test-utils": "^1.0.0-beta.14",
-    "expect"         : "^21.2.1",
-    "mocha-webpack"  : "^2.0.0-beta.0"
+    "expect": "^21.2.1",
+    "mocha-webpack": "^2.0.0-beta.0"
   },
   "devDependencies": {
-    "babel-core"            : "^6.26.3",
-    "babel-preset-env"      : "^1.7.0",
-    "css-loader"            : "^0.28.11",
-    "eslint"                : "^4.19.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import"  : "^2.11.0",
+    "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-markdown": "^1.0.0-beta.6",
-    "eslint-plugin-mocha"   : "^5.0.0",
-    "eslint-plugin-node"    : "^6.0.1",
-    "eslint-plugin-promise" : "^3.7.0",
+    "eslint-plugin-mocha": "^5.0.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
-    "eslint-plugin-vue"     : "^4.4.0",
-    "jsdom"                 : "^12.0.0",
-    "jsdom-global"          : "^3.0.2",
-    "lint-staged"           : "^7.0.4",
-    "mocha"                 : "^5.2.0",
-    "pre-commit"            : "^1.2.2",
-    "vue"                   : "^2.5.17",
-    "vue-loader"            : "^15.4.1",
-    "vue-template-compiler" : "^2.5.3",
-    "webpack"               : "^4.17.2",
-    "webpack-cli"           : "^3.1.0"
+    "eslint-plugin-vue": "^4.4.0",
+    "jsdom": "^12.0.0",
+    "jsdom-global": "^3.0.2",
+    "lint-staged": "^7.0.4",
+    "mocha": "^5.2.0",
+    "pre-commit": "^1.2.2",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.4.1",
+    "vue-template-compiler": "^2.5.3",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
   }
 }
