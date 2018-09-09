@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-    <h2>Where am i ?</h2>
+    <h2 class="display-4">Where am i ?</h2>
     <div class="form-group">
       <input type="text" name="title">  
     </div>

@@ -37,6 +37,14 @@ class Helpers {
 		this.expect(this.wrapper.classes()).not.toContain(name)
 	}
 
+	hasAttribute(attr, value, selector) {
+		this.expect(this.find(selector).attributes()[attr]).toBe(value)
+	}
+
+	doesNotHaveAttribute(attr, value, selector) {
+		this.expect(this.find(selector).attributes()[attr]).not.toBe(value)
+	}
+
 
 	find(selector) {
 		return this.wrapper.find(selector)
