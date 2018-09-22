@@ -122,18 +122,18 @@ describe('Questions', () => {
 * `b.hasAttribute(attribute, value, selector)`
   <!-- eslint-disable no-undef -->
   ```js
-	it('h2 has a class attribute display-4', () => {
-		b.hasAttribute('class', 'display-4', '.container h2')
-	})
+  it('h2 has a class attribute display-4', () => {
+      b.hasAttribute('class', 'display-4', '.container h2')
+  })
   ```
 
 
 * `b.doesNotHaveAttribute(attribute, value, selector)`
   <!-- eslint-disable no-undef -->
   ```js
-	it('h2 hasn\'t a class attribute display-3', () => {
-		b.doesNotHaveAttribute('class', 'display-3', '.container h2')
-	})
+  it("h2 hasn't a class attribute display-3", () => {
+      b.doesNotHaveAttribute('class', 'display-3', '.container h2')
+  })
   ```
 
 
@@ -158,7 +158,7 @@ describe('Questions', () => {
   })
   ```
 
-* `b.inputValueIs(text, selector)`
+* `b.inputValueIsNot(text, selector)`
   <!-- eslint-disable no-undef -->
   ```js
   it('does the input value is not this text', () => {
