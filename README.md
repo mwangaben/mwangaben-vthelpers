@@ -129,7 +129,7 @@ describe('Questions', () => {
 
 
 * `b.doesNotHaveAttribute(attribute, value, selector)`
-  <!-- eslint-disable no-undef -->
+  <!-- eslint-disable no-undef quotes -->
   ```js
   it(`h2 hasn't a class attribute display-3`, () => {
       b.doesNotHaveAttribute('class', 'display-3', '.container h2')
