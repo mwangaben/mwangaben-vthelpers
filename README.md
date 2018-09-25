@@ -17,6 +17,14 @@ This package depends on vue-test-utils and expect (if you don't use jest) packag
 $ npm install mwangaben-vthelpers --save-dev
 ```
 
+## Configuration for Jest
+```js
+// add this to jest config
+transformIgnorePatterns: [
+  '<rootDir>/node_modules/(?!mwangaben-vthelpers)'
+],
+```
+
 ## Basic Usage
 
 <!-- eslint-disable no-undef, no-unused-vars -->
