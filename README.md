@@ -18,11 +18,10 @@ $ npm install mwangaben-vthelpers --save-dev
 ```
 
 ## Configuration for Jest
-```js
-// add this to jest config
+```
 transformIgnorePatterns: [
   '<rootDir>/node_modules/(?!mwangaben-vthelpers)'
-],
+]
 ```
 
 ## Basic Usage
