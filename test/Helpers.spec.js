@@ -1,4 +1,3 @@
-import expect from 'expect'
 import {
 	mount
 } from '@vue/test-utils'
@@ -14,7 +13,7 @@ describe('Questions', () => {
 	beforeEach(() => {
 		wrapper = mount(Questions)
 
-		b = new Helpers(wrapper, expect)
+		b = new Helpers(wrapper)
 	})
 
 	it('tests see(text, selector) method with selector', () => {

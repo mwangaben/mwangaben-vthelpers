@@ -1,7 +1,8 @@
+import theExpect from 'expect'
 class Helpers {
-	constructor(wrapper, expect) {
+	constructor(wrapper, expect= null) {
 		this.wrapper = wrapper
-		this.expect = expect
+		this.expect = expect ? expect : theExpect 
 	}
 
 	// dom

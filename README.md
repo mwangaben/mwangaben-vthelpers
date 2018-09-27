@@ -45,6 +45,12 @@ describe('Questions', () => {
   // ...
 })
 ```
+### Note 
+  *Please note that the second argument is now optional and will be removed in the near future*
+```js
+ b = new Helpers(wrapper);
+
+```
 
 ## Documentation
 
