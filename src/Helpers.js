@@ -1,8 +1,7 @@
-import theExpect from 'expect'
 class Helpers {
 	constructor(wrapper) {
 		this.wrapper = wrapper
-		this.expect = theExpect 
+		this.expect = require('expect')
 	}
 
 	// dom
@@ -28,14 +27,14 @@ class Helpers {
 		this.expect(this.wrapper.contains(selector)).toBe(false)
 	}
 
-	hasAClass(name, selector=null) {
-		selector ? this.expect(this.find(selector).classes()).toContain(name) : 
-		this.expect(this.wrapper.classes()).toContain(name)
+	hasAClass(name, selector = null) {
+		selector ? this.expect(this.find(selector).classes()).toContain(name) :
+			this.expect(this.wrapper.classes()).toContain(name)
 	}
 
-	doesNotHaveAClass(name, selector=null) {
-		selector ? this.expect(this.find(selector).classes()).not.toContain(name) : 
-		this.expect(this.wrapper.classes()).not.toContain(name)
+	doesNotHaveAClass(name, selector = null) {
+		selector ? this.expect(this.find(selector).classes()).not.toContain(name) :
+			this.expect(this.wrapper.classes()).not.toContain(name)
 	}
 
 	hasAttribute(attr, value, selector) {
@@ -64,6 +63,11 @@ class Helpers {
 
 	inputValueIsNot(text, selector) {
 		this.expect(this.find(selector).element.value).not.toBe(text)
+	}
+
+	isEmpty(selector) {
+		// this.inputValueIs('', selector)
+		this.expect(this.find(selector).element.value).toBe('')
 	}
 
 	// event

@@ -151,7 +151,7 @@ describe('Questions', () => {
 
 
 ### INPUT
-* `b.type(text, selector, event)`
+* `b.type(text, selector, event=input)`
   <!-- eslint-disable no-undef -->
   ```js
   it('does the typing thing ', () => {
@@ -178,6 +178,14 @@ describe('Questions', () => {
 
     b.inputValueIsNot('Tdd in Vue', 'input[name=title]')
   })
+  ```
+
+ * `b.isEmpty(selector)`
+    <!-- eslint-disable no-undef -->
+  ```js
+    it('checks if the input is empty/ has no value', () => {
+      b.isEmpty(selector);
+    });
   ```
 
 ### EVENT
@@ -258,12 +266,12 @@ describe('MockingRequest', () => {
     moxios.uninstall()
   })
 
-  it('it should have title and body', () => {
+  it('should have title and body', () => {
     b.see('The title')
     b.see('The body')
   })
 
-  it('it can be edited', () => {
+  it('can be edited', () => {
     b.domHasNot('input[name=title]')
     b.domHasNot('textearea[name=body]')
 
@@ -278,7 +286,7 @@ describe('MockingRequest', () => {
     expect(wrapper.contains('.edit')).toBe(false)
   })
 
-  it('it updates the question when the update is clicked', (done) => {
+  it('updates the question when the update is clicked', (done) => {
     b.click('.edit')
 
     b.see('Update')
@@ -307,7 +315,7 @@ describe('MockingRequest', () => {
     })
   })
 
-  it('it can cancel the editing', () => {
+  it('can cancel the editing', () => {
     b.click('.edit')
 
     b.type('Changed title', 'input[name=title]')
@@ -316,6 +324,14 @@ describe('MockingRequest', () => {
 
     b.see('The title')
   })
+
+  it('clears input after submission of data', () => {
+       b.type('Go to the store', 'input[name="todo"]')
+
+       b.click('#save')
+
+       b.isEmpty('input[name="todo"]')
+   })
 })
 ```
 
